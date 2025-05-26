@@ -8,19 +8,6 @@ Access thousands of remote job listings and company information directly from yo
 
 ### 🔍 Job Search Tools
 
-#### `get_jobs`
-Retrieve the latest remote job listings with optional filtering.
-
-**Parameters:**
-- `page` (number, optional): Page number for pagination (default: 1)
-- `country` (string, optional): Filter jobs by country (e.g., 'Canada', 'United States', 'UK', 'Germany')
-- `worldwide` (boolean, optional): Show ONLY 100% remote jobs available worldwide (default: false)
-
-**Example usage:**
-- "Get remote jobs in Canada"
-- "Show me worldwide remote opportunities"
-- "Find jobs on page 2"
-
 #### `search_jobs`
 Search for specific jobs using keywords with advanced filtering.
 
@@ -35,19 +22,20 @@ Search for specific jobs using keywords with advanced filtering.
 - "Find React jobs in the United States"
 - "Look for product manager positions worldwide"
 
-### 🏢 Company Search Tools
-
-#### `get_companies`
-Browse remote-friendly companies with optional filtering.
+#### `get_jobs`
+Retrieve the latest remote job listings with optional filtering.
 
 **Parameters:**
 - `page` (number, optional): Page number for pagination (default: 1)
-- `country` (string, optional): Filter companies by country
-- `worldwide` (boolean, optional): Show only companies with 100% remote jobs available worldwide
+- `country` (string, optional): Filter jobs by country (e.g., 'Canada', 'United States', 'UK', 'Germany')
+- `worldwide` (boolean, optional): Show ONLY 100% remote jobs available worldwide (default: false)
 
 **Example usage:**
-- "Show me remote companies in Europe"
-- "Find companies with worldwide remote jobs"
+- "Get remote jobs in Canada"
+- "Show me worldwide remote opportunities"
+- "Find jobs on page 2"
+
+### 🏢 Company Search Tools
 
 #### `search_companies`
 Search for specific companies using keywords.
@@ -62,6 +50,18 @@ Search for specific companies using keywords.
 - "Search for AI startups"
 - "Find fintech companies with remote jobs"
 - "Look for companies named 'Stripe'"
+
+#### `get_companies`
+Browse remote-friendly companies with optional filtering.
+
+**Parameters:**
+- `page` (number, optional): Page number for pagination (default: 1)
+- `country` (string, optional): Filter companies by country
+- `worldwide` (boolean, optional): Show only companies with 100% remote jobs available worldwide
+
+**Example usage:**
+- "Show me remote companies in Europe"
+- "Find companies with worldwide remote jobs"
 
 ## Setup Instructions
 
