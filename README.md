@@ -4,6 +4,8 @@ Access thousands of remote job listings and company information directly from yo
 
 🌐 **Public Server URL:** `https://mcp.himalayas.app/sse`
 
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=himalayas&config=eyJjb21tYW5kIjoibnB4IG1jcC1yZW1vdGUgaHR0cHM6Ly9tY3AuaGltYWxheWFzLmFwcC9zc2UifQ%3D%3D)
+
 ## Available Tools
 
 ### 🔍 Job Search Tools
