@@ -3,6 +3,7 @@
 Access remote job listings, salary data, company profiles, and career tools directly from your AI assistant. The Himalayas MCP server provides real-time tools for job search, company research, salary benchmarks, profile management, application tracking, and employer job posting. Works with any AI platform that supports MCP servers, including Claude (Desktop, Code, Cowork), ChatGPT, Gemini, Cursor, Windsurf, VS Code, Openclaw, and Microsoft Copilot Studio.
 
 **Server URL (Streamable HTTP — recommended):** `https://mcp.himalayas.app/mcp`
+
 **Server URL (SSE — legacy fallback):** `https://mcp.himalayas.app/sse`
 
 ## Available Tools
