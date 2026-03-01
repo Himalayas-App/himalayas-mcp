@@ -6,6 +6,8 @@ Access remote job listings, salary data, company profiles, and career tools dire
 
 **Server URL (SSE — legacy fallback):** `https://mcp.himalayas.app/sse`
 
+[![Trust Score](https://archestra.ai/mcp-catalog/api/badge/quality/Himalayas-App/himalayas-mcp)](https://archestra.ai/mcp-catalog/himalayas-app__himalayas-mcp)
+
 ## Available Tools
 
 ### Public Tools (No Authentication Required)
