@@ -74,13 +74,13 @@ Access remote job listings, salary data, company profiles, and career tools dire
 
 **`add_education`** — Add education: school, degree, field, years, description.
 
-**`update_tech_stack`** — Set up to 5 technologies on your profile (e.g., React, Python, TypeScript).
+**`update_tech_stack`** — Set technologies on your profile (e.g., React, Python, TypeScript).
 
 #### Job Application Tracker
 
 **`save_job`** — Save a job to your kanban tracker with status, salary, excitement (0-5), notes, and links.
 
-**`get_saved_jobs`** — View all saved jobs grouped by status (saved, applied, interviewing, negotiation, hired, archived).
+**`get_saved_jobs`** — View all saved jobs grouped by status (seen, saved, applied, interviewing, negotiation, hired, archived).
 
 **`update_job_status`** — Move a job through your pipeline or update notes/excitement.
 
@@ -100,7 +100,7 @@ Access remote job listings, salary data, company profiles, and career tools dire
 
 **`get_company_perks`** — View perks grouped by category.
 
-**`add_company_perk`** — Add a perk with title, category (10 categories), and description.
+**`add_company_perk`** — Add a perk with title, category (30 categories including Healthcare benefits, Equity benefits, 4-day workweeks, Home office budget, and more), and description.
 
 **`remove_company_perk`** — Remove a perk by ID.
 
