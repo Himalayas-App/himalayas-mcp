@@ -1,0 +1,27 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+    "name": "app.himalayas/mcp",
+    "title": "Himalayas Remote Jobs",
+    "description": "Search remote jobs, companies, salaries, and talent on Himalayas.app",
+    "websiteUrl": "https://himalayas.app",
+    "icons": [
+        {
+            "src": "https://himalayas.app/icon.png"
+        }
+    ],
+    "repository": {
+        "url": "https://github.com/Himalayas-App/himalayas-mcp",
+        "source": "github"
+    },
+    "version": "1.0.1",
+    "remotes": [
+        {
+            "type": "streamable-http",
+            "url": "https://mcp.himalayas.app/mcp"
+        },
+        {
+            "type": "sse",
+            "url": "https://mcp.himalayas.app/sse"
+        }
+    ]
+}
