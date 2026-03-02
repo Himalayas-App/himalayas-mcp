@@ -2,10 +2,9 @@
 
 Search remote jobs, post job listings, find remote candidates, check salary benchmarks, and manage your career — all through AI conversation. The Himalayas MCP server connects your AI assistant to the [Himalayas](https://himalayas.app) remote jobs marketplace in real time.
 
-Works with any AI platform that supports MCP servers, including **Claude Desktop**, **Claude Code**, **Claude Cowork**, **ChatGPT**, **Gemini**, **Cursor**, **Windsurf**, **VS Code**, **Openclaw**, and **Microsoft Copilot Studio**.
+Works with any AI platform that supports MCP servers, including **Claude** (Desktop, Code, Cowork), **ChatGPT**, **Gemini**, **Cursor**, **Windsurf**, **VS Code**, **Openclaw**, and **Microsoft Copilot Studio**.
 
 **Server URL (Streamable HTTP — recommended):** `https://mcp.himalayas.app/mcp`
-
 **Server URL (SSE — legacy fallback):** `https://mcp.himalayas.app/sse`
 
 ## Search for remote jobs with AI
@@ -238,6 +237,8 @@ Authenticated tools use **OAuth 2.1 with PKCE**. When you first use a profile, t
 - [How to Hire Remote Talent with AI](https://himalayas.app/docs/hire-with-ai) — Post jobs, search candidates, and benchmark salaries through AI
 - [AI Agents Hub](https://himalayas.app/docs/ai-agents) — Overview of MCP, API, and RSS integrations
 - [Data Dictionary](https://himalayas.app/docs/data-dictionary) — Every field, enum, and taxonomy
+- [How to Post Jobs Using AI](https://himalayas.app/advice/how-to-post-jobs-using-ai) — Walkthrough of AI-powered job posting methods and best practices
+- [Free Alternative to LinkedIn Recruiter](https://himalayas.app/advice/free-alternative-to-linkedin-recruiter) — How Himalayas talent search compares to LinkedIn Recruiter
 
 ## Support
 
