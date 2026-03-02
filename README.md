@@ -1,128 +1,87 @@
 # Himalayas Remote Jobs MCP Server
 
-Access remote job listings, salary data, company profiles, and career tools directly from your AI assistant. The Himalayas MCP server provides real-time tools for job search, company research, salary benchmarks, profile management, application tracking, and employer job posting. Works with any AI platform that supports MCP servers, including Claude (Desktop, Code, Cowork), ChatGPT, Gemini, Cursor, Windsurf, VS Code, Openclaw, and Microsoft Copilot Studio.
+Search remote jobs, post job listings, find remote candidates, check salary benchmarks, and manage your career — all through AI conversation. The Himalayas MCP server connects your AI assistant to the [Himalayas](https://himalayas.app) remote jobs marketplace in real time.
+
+Works with any AI platform that supports MCP servers, including **Claude** (Desktop, Code, Cowork), **ChatGPT**, **Gemini**, **Cursor**, **Windsurf**, **VS Code**, **Openclaw**, and **Microsoft Copilot Studio**.
 
 **Server URL (Streamable HTTP — recommended):** `https://mcp.himalayas.app/mcp`
-
 **Server URL (SSE — legacy fallback):** `https://mcp.himalayas.app/sse`
 
-## Available Tools
+## Search for remote jobs with AI
 
-### Public Tools (No Authentication Required)
+Ask your AI assistant to find remote jobs and it searches the Himalayas marketplace in real time — over 100,000 listings with filters for salary, country, experience level, employment type, skills, and more.
 
-#### Job Search & Discovery
+- "Find remote Python developer jobs paying over $150K"
+- "Show me senior React positions in Canada"
+- "Search for part-time contractor roles worldwide"
+- "What remote data science jobs were posted this week?"
+- "Find entry-level marketing roles that offer health insurance"
 
-**`search_jobs`** — Search remote jobs with comprehensive filtering.
+Each result includes the full job description, salary range, company details, screening questions, and a direct application link. Use `get_related_jobs` to find similar roles, or `get_job_details` for the complete posting.
 
-| Parameter | Type | Description |
-|---|---|---|
-| keyword | string | Search term for job title, skills, or description |
-| page | integer | Page number for pagination (default: 1) |
-| country | string | Filter by country (e.g., "United States", "Germany") |
-| worldwide | boolean | Show only jobs with no location restrictions |
-| exclude_worldwide | boolean | Exclude worldwide jobs, show country-specific only |
-| experience | string | entry-level, mid-level, senior, manager, director, executive |
-| type | string | Full Time, Part Time, Contractor, Temporary, Intern, Volunteer, Other |
-| salary_min | integer | Minimum salary filter |
-| salary_max | integer | Maximum salary filter |
-| currency | string | Salary currency (USD, EUR, GBP, CAD, AUD, and 20+ others) |
-| salary_required | boolean | Only show jobs with salary information |
-| markets | string | Filter by job categories/markets |
-| benefits | string | Filter by company benefits |
-| companies | string | Filter by specific company names |
-| sort | string | relevant, recent, salaryAsc, salaryDesc |
+## Check remote salary data
 
-**`get_jobs`** — Browse the latest remote job listings with optional country/worldwide filters.
+Get salary benchmarks for any remote role by job title, seniority, and country. The data returns minimum, median, and maximum salaries in USD with fuzzy matching on job titles — you don't need to know the exact title.
 
-**`get_job_details`** — Full job description, requirements, salary, screening questions, and application link. Parameters: company_slug, job_slug.
+- "What's the average salary for a Senior Product Manager?"
+- "Compare salaries for React developers in the US vs Canada"
+- "Show me salary benchmarks for DevOps engineers in Europe"
+- "What do remote data engineers make at the senior level?"
 
-**`get_related_jobs`** — Find similar jobs by skills, location, and category. Parameters: company_slug, job_slug, page.
+## Post remote jobs with AI
 
-#### Company Research
+Describe the role you're hiring for in natural language and the AI structures and submits the posting. Jobs are free to post on Himalayas. No form filling, no dashboard — just conversation.
 
-**`search_companies`** — Search companies by keyword, country, benefits, tech_stack, sort (relevant, recent, jobs, nameAToZ, nameZToA).
+- "Post a remote Senior Frontend Engineer role at $140-170K, full-time, worldwide"
+- "Create a job listing for a Part-time Customer Support Specialist with screening questions"
+- "Post a React developer role and add a question about TypeScript experience"
+- "Show me how our job postings are performing"
 
-**`get_companies`** — Browse remote-friendly companies with optional country/worldwide filters.
+Supports screening questions (boolean, text, multiple choice), salary ranges, skill tags, and optional paid extras for promoted placement (sticky $199, newsletter $99). You can also post without a Himalayas account using the `post_job_public` tool.
 
-**`get_company_details`** — Comprehensive company profile: about, founded year, employee count, tech stack, benefits, open jobs, social links.
+For the full employer workflow, see [How to Hire Remote Talent with AI](https://himalayas.app/docs/hire-with-ai).
 
-#### Salary Data & Market Intelligence
+## Find remote candidates and recruit with AI
 
-**`get_salary_data`** — Salary benchmarks by job title, seniority, and country. Returns min/median/max in USD. Fuzzy-matches job titles.
+Search 100K+ remote candidate profiles by keyword, country, and skills — completely free, no account or API key required. Every candidate on Himalayas has opted into remote work, so the signal is clean.
 
-**`get_remote_work_statistics`** — Top 30 entries for skills, categories, countries, or industries by remote job/company count.
+- "Find React developers in Canada who are open to new roles"
+- "Search for senior engineers with Python and Kubernetes experience"
+- "Show me product managers in Europe who are actively searching"
+- "Find UX designers with fintech experience"
 
-#### Talent Search
+Each result includes the candidate's current role, company, skills, salary expectations, and career search status (actively searching, open to roles, or not looking). Visit their profile on Himalayas to message them directly — messaging is free and unlimited for all employers.
 
-**`search_talent`** — Search remote candidates by keyword, country, page, sort. Returns profiles with name, current role, salary expectations, and search status.
+## Research remote companies
 
-#### Utility
+Get full company profiles including tech stack, benefits, open positions, employee count, and social links. Compare companies or research competitors before applying or hiring.
 
-**`get_correct_country_name`** — Fuzzy-match country name strings to the correct format for filtering.
+- "Tell me about Stripe's remote work setup"
+- "Find companies that use React and offer unlimited PTO"
+- "Which companies in Germany are hiring remotely?"
+- "What benefits does GitLab offer?"
 
-**`check_job_payment_status`** — Check Stripe payment status for job postings by session ID.
+## Track job applications with AI
 
-### Job Seeker Tools (Requires Free Himalayas Account)
+Save jobs to a kanban-style application tracker with statuses (saved, applied, interviewing, negotiation, hired, archived), excitement ratings, salary notes, and free-text notes. Manage your entire job search pipeline through conversation.
 
-#### Profile Management
+- "Save this job to my application tracker"
+- "Move the Stripe application to interviewing stage"
+- "Show me all the jobs I've applied to"
+- "Update my notes on the Figma role — second interview scheduled for Friday"
 
-**`get_my_profile`** — View your complete profile: name, email, location, career preferences, experience, education, tech stack.
+## Manage your career profile with AI
 
-**`update_profile`** — Update bio, intro, location, career_search_status (actively_searching/open_to_roles/closed_to_roles), career_primary_role, salary expectations, career_description.
+Update your Himalayas profile, add work experience and education, and set your job search status — all through conversation. Your profile is visible to employers searching the talent directory.
 
-**`add_experience`** — Add work experience: title, company_name, employment_type, description, location, dates, skills.
+- "Update my profile to actively searching"
+- "Add my new role at Acme Corp as a Senior Engineer"
+- "Set my tech stack to React, TypeScript, Node.js, and PostgreSQL"
+- "Update my salary expectation to $160-180K"
 
-**`add_education`** — Add education: school, degree, field, years, description.
+---
 
-**`update_tech_stack`** — Set technologies on your profile (e.g., React, Python, TypeScript).
-
-#### Job Application Tracker
-
-**`save_job`** — Save a job to your kanban tracker with status, salary, excitement (0-5), notes, and links.
-
-**`get_saved_jobs`** — View all saved jobs grouped by status (seen, saved, applied, interviewing, negotiation, hired, archived).
-
-**`update_job_status`** — Move a job through your pipeline or update notes/excitement.
-
-**`remove_saved_job`** — Remove a job from your tracker.
-
-### Employer Tools (Requires Company Account)
-
-#### Company Profile
-
-**`get_company_profile`** — View your company's profile and open positions count.
-
-**`update_company_profile`** — Update about, summary, CEO, employee range, year founded, locations, social links.
-
-**`update_company_tech_stack`** — Set your company's technologies (fuzzy-matched).
-
-#### Perks & Benefits
-
-**`get_company_perks`** — View perks grouped by category.
-
-**`add_company_perk`** — Add a perk with title, category (30 categories including Healthcare benefits, Equity benefits, 4-day workweeks, Home office budget, and more), and description.
-
-**`remove_company_perk`** — Remove a perk by ID.
-
-#### Job Management
-
-**`create_company_job`** — Post a remote job. Free to post, admin review required. Supports screening questions (boolean, text, multiple choice) and paid extras (sticky $199, newsletter $99).
-
-**`update_company_job`** — Update any field of an existing posting.
-
-**`delete_company_job`** — Permanently delete a posting.
-
-**`list_company_jobs`** — List all jobs with status, views, clicks, and expiry.
-
-**`show_company_job`** — Full details of a specific posting.
-
-**`purchase_job_extras`** — Buy sticky or newsletter placement. Returns Stripe checkout URL.
-
-### Public Job Posting (No Account Required)
-
-**`post_job_public`** — Post a job without a Himalayas account. Provide email, company name, company URL, and job details. Email domain must match company URL. Stripe payment required.
-
-## Setup Instructions
+## Setup
 
 ### Claude Desktop
 
@@ -144,7 +103,20 @@ Access remote job listings, salary data, company profiles, and career tools dire
 ```
 
 3. Save and restart Claude Desktop.
-4. Public tools work immediately. For authenticated tools, you'll be prompted to log in on first use.
+
+### Claude Code
+
+```bash
+claude mcp add himalayas -- npx -y mcp-remote https://mcp.himalayas.app/mcp
+```
+
+### ChatGPT
+
+MCP support in ChatGPT is rolling out progressively. Check your ChatGPT settings for MCP server configuration. Use the server URL `https://mcp.himalayas.app/mcp`.
+
+### Gemini
+
+MCP support in Gemini is rolling out progressively. Use the server URL `https://mcp.himalayas.app/mcp` when configuring MCP servers in your Gemini setup.
 
 ### Cursor
 
@@ -173,70 +145,96 @@ Edit `~/.codeium/windsurf/mcp_config.json`:
 
 Save and restart Windsurf.
 
-### Other MCP Clients
+### Microsoft Copilot Studio
 
-The Himalayas MCP server works with any MCP-compatible client including VS Code, Zed, Cline, Continue, and others. Connect to `https://mcp.himalayas.app/mcp` (Streamable HTTP) or `https://mcp.himalayas.app/sse` (SSE fallback).
+Add the Himalayas MCP server URL `https://mcp.himalayas.app/mcp` in your Copilot Studio MCP configuration. See [Microsoft's MCP documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/) for setup details.
 
-## Example Conversations
+### Openclaw
 
-### Job Search
-- "Find remote Python developer jobs paying over $150K"
-- "Show me senior React positions in Canada"
-- "Search for part-time contractor roles worldwide"
-- "What are the latest remote data science jobs?"
+Add the Himalayas MCP server in your Openclaw MCP configuration using the server URL `https://mcp.himalayas.app/mcp`.
 
-### Salary Research
-- "What's the average salary for a Senior Product Manager?"
-- "Compare salaries for React developers in the US vs Canada"
-- "Show me salary benchmarks for DevOps engineers"
+### VS Code, Zed, Cline, Continue, and others
 
-### Company Research
-- "Tell me about Stripe's remote work setup"
-- "Find companies that use React and offer unlimited PTO"
-- "Which companies in Germany are hiring remotely?"
-
-### Talent Sourcing (Employers)
-- "Find React developers in Canada who are open to new roles"
-- "Search for senior engineers with Python experience"
-
-### Job Posting (Employers)
-- "Post a remote Senior Frontend Engineer role at $140-170K"
-- "Create a job listing for a Part-time Customer Support Specialist"
-- "Show me how our job postings are performing"
-
-### Profile & Tracking (Job Seekers)
-- "Update my profile to actively searching"
-- "Save this job to my application tracker"
-- "Move the Stripe application to interviewing stage"
-- "Add my new role at Acme Corp to my experience"
+The Himalayas MCP server works with any MCP-compatible client. Connect to `https://mcp.himalayas.app/mcp` (Streamable HTTP) or `https://mcp.himalayas.app/sse` (SSE fallback).
 
 ## Authentication
 
-Public tools (job search, salary data, company research, talent search) work without any authentication.
+Public tools — job search, salary data, company research, talent search — work without any authentication or API key.
 
-Authenticated tools use **OAuth 2.1 with PKCE**. When you first use a profile, tracker, or employer tool, your AI assistant will open a secure login page in your browser. Log in with your Himalayas account, and your session persists with automatic token refresh.
+Authenticated tools use **OAuth 2.1 with PKCE**. When you first use a profile, tracker, or employer tool, your AI assistant opens a secure login page. Log in with your free Himalayas account, and your session persists with automatic token refresh.
+
+## Tool Reference
+
+<details>
+<summary><strong>Public tools (no authentication required)</strong></summary>
+
+| Tool | Description |
+|---|---|
+| `search_jobs` | Search remote jobs by keyword, country, experience, type, salary, benefits, skills, and more |
+| `get_jobs` | Browse latest remote job listings |
+| `get_job_details` | Full job description, salary, screening questions, and application link |
+| `get_related_jobs` | Find similar jobs by skills, location, and category |
+| `search_companies` | Search companies by keyword, country, benefits, tech stack |
+| `get_companies` | Browse remote-friendly companies |
+| `get_company_details` | Full company profile with tech stack, benefits, and open jobs |
+| `get_salary_data` | Salary benchmarks by job title, seniority, and country (min/median/max USD) |
+| `get_remote_work_statistics` | Top skills, categories, countries, and industries by remote job count |
+| `search_talent` | Search 100K+ remote candidates by keyword, country, and skills |
+| `get_correct_country_name` | Fuzzy-match country names to the correct format |
+| `check_job_payment_status` | Check Stripe payment status for job postings |
+
+</details>
+
+<details>
+<summary><strong>Job seeker tools (free Himalayas account required)</strong></summary>
+
+| Tool | Description |
+|---|---|
+| `get_my_profile` | View your complete profile |
+| `update_profile` | Update bio, location, search status, salary expectations, and more |
+| `add_experience` | Add work experience with title, company, dates, skills |
+| `add_education` | Add education with school, degree, field, years |
+| `update_tech_stack` | Set technologies on your profile |
+| `save_job` | Save a job to your kanban tracker with status, salary, excitement, notes |
+| `get_saved_jobs` | View all saved jobs grouped by pipeline status |
+| `update_job_status` | Move a job through your pipeline |
+| `remove_saved_job` | Remove a job from your tracker |
+
+</details>
+
+<details>
+<summary><strong>Employer tools (company account required)</strong></summary>
+
+| Tool | Description |
+|---|---|
+| `get_company_profile` | View your company profile and open positions |
+| `update_company_profile` | Update about, summary, CEO, employee range, locations, social links |
+| `update_company_tech_stack` | Set your company's technologies (fuzzy-matched) |
+| `get_company_perks` | View perks grouped by category |
+| `add_company_perk` | Add a perk with title, category, and description |
+| `remove_company_perk` | Remove a perk by ID |
+| `create_company_job` | Post a remote job with screening questions and paid extras |
+| `update_company_job` | Update any field of an existing posting |
+| `delete_company_job` | Permanently delete a posting |
+| `list_company_jobs` | List all jobs with views, clicks, status, and expiry |
+| `show_company_job` | Full details of a specific posting |
+| `purchase_job_extras` | Buy sticky or newsletter placement (returns Stripe checkout URL) |
+| `post_job_public` | Post a job without an account (Stripe payment required) |
+
+</details>
 
 ## Troubleshooting
 
-### Connection Issues
-- Ensure Node.js is installed (`node --version`)
-- Try restarting your AI assistant after configuration changes
-- Clear auth cache if needed: `rm -rf ~/.mcp-auth`
+**Connection issues** — Ensure Node.js is installed (`node --version`). Restart your AI assistant after configuration changes. Clear auth cache if needed: `rm -rf ~/.mcp-auth`.
 
-### Authentication Problems
-- Complete the OAuth flow in the browser window that opens
-- Use the correct server URL: `https://mcp.himalayas.app/mcp`
-- For employer tools, ensure your Himalayas account is associated with a company
+**Authentication problems** — Complete the OAuth flow in the browser window that opens. Use the correct server URL: `https://mcp.himalayas.app/mcp`. For employer tools, ensure your Himalayas account is linked to a company.
 
-### Tools Not Appearing
-- Verify valid JSON syntax in your configuration file
-- Restart your AI assistant completely
-- Check the tools menu in your AI assistant's interface
+**Tools not appearing** — Verify valid JSON syntax in your configuration file. Restart your AI assistant completely. Check the tools menu in your AI assistant's interface.
 
 ## Documentation
 
 - [MCP Server Documentation](https://himalayas.app/docs/remote-jobs-mcp) — Full tool reference with parameters, examples, and AI agent instructions
-- [Hire with AI](https://himalayas.app/docs/hire-with-ai) — Post jobs, search candidates, and benchmark salaries through AI conversation
+- [How to Hire Remote Talent with AI](https://himalayas.app/docs/hire-with-ai) — Post jobs, search candidates, and benchmark salaries through AI
 - [AI Agents Hub](https://himalayas.app/docs/ai-agents) — Overview of MCP, API, and RSS integrations
 - [Data Dictionary](https://himalayas.app/docs/data-dictionary) — Every field, enum, and taxonomy
 
