@@ -5,6 +5,7 @@ Search remote jobs, post job listings, find remote candidates, check salary benc
 Works with any AI platform that supports MCP servers, including **Claude Desktop**, **Claude Code**, **Claude Cowork**, **ChatGPT**, **Gemini**, **Cursor**, **Windsurf**, **VS Code**, **Openclaw**, and **Microsoft Copilot Studio**.
 
 **Server URL (Streamable HTTP — recommended):** `https://mcp.himalayas.app/mcp`
+
 **Server URL (SSE — legacy fallback):** `https://mcp.himalayas.app/sse`
 
 ## Search for remote jobs with AI
