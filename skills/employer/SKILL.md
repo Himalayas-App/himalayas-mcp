@@ -37,6 +37,16 @@ You have access to the Himalayas MCP server at `https://mcp.himalayas.app/mcp` w
 ### Talent sourcing (public, no auth)
 
 - **`search_talent`** — Search remote candidates by keyword, country, page, sort. Returns candidate profiles with name, current role, salary expectations, search status, and profile link. Free, no authentication required.
+- **`get_talent_profile`** — Get full details for a candidate including bio, all work experiences, education, tech stack, social links, and career goals. Uses the talent_slug from search_talent results. Free, no authentication required.
+
+### Candidate messaging (requires employer auth)
+
+- **`list_conversations`** — List all messaging conversations with last message preview and status (awaiting reply, new reply, read). No parameters required.
+- **`get_conversation`** — Get full message history for a conversation. Accepts room_name or talent_slug.
+- **`start_conversation`** — Start a conversation with a candidate by talent_slug. Optionally send an initial message. If the conversation already exists, returns it.
+- **`send_message`** — Send a message in an existing conversation. Accepts room_name or talent_slug. Rate limit: 10 messages per minute.
+- **`mark_message_read`** — Mark a message as read by message_id. Accepts room_name or talent_slug.
+- **`delete_conversation`** — Delete a conversation. Accepts room_name or talent_slug.
 
 ### Market intelligence (public, no auth)
 
@@ -86,9 +96,34 @@ Entry Level, Mid Level, Senior, Manager, Director, Executive
 ### When sourcing talent
 
 1. Use `search_talent` for direct candidate search — it's free and public.
-2. Combine with `search_companies` (tech_stack filter) to find companies using similar technologies and identify where talent clusters.
-3. Use `get_salary_data` to help set competitive salary ranges before posting.
-4. When presenting candidates, always include their profile link so the employer can view the full profile on Himalayas.
+2. Use `get_talent_profile` to deep-dive into promising candidates — review their full work history, education, tech stack, and career goals before reaching out.
+3. Combine with `search_companies` (tech_stack filter) to find companies using similar technologies and identify where talent clusters.
+4. Use `get_salary_data` to help set competitive salary ranges before posting.
+5. When presenting candidates, always include their profile link so the employer can view the full profile on Himalayas.
+6. Suggest the employer reach out to strong matches using `start_conversation`.
+
+### When messaging candidates
+
+1. Before messaging, use `get_talent_profile` to research the candidate's background — reference specific experience or skills in the outreach message.
+2. Use `start_conversation` to begin a new thread. Include a personalized initial message mentioning the role, salary range, and why the candidate is a good fit.
+3. Use `list_conversations` to check for replies. Highlight conversations with "new reply" status.
+4. Use `get_conversation` to read the full thread before drafting a response with `send_message`.
+5. Keep messages professional and concise. Reference the candidate's specific skills or experience to show genuine interest.
+6. Be aware of the rate limit: 10 messages per minute per employer.
+7. The employer must have a verified work email to message candidates. If unverified, guide them to verify their email on Himalayas.
+
+### Full recruiting workflow
+
+When an employer wants to find and recruit talent end-to-end, guide them through this pipeline:
+
+1. **Source**: Use `search_talent` with relevant keywords, skills, or country filters to find candidates.
+2. **Research**: Use `get_talent_profile` on promising candidates to evaluate their full background, tech stack, and career goals.
+3. **Reach out**: Use `start_conversation` to message top picks with a personalized outreach referencing their specific experience.
+4. **Follow up**: Use `list_conversations` to check for replies, `get_conversation` to read threads, and `send_message` to continue discussions.
+5. **Post a job**: Use `create_company_job` to post the role publicly, informed by salary benchmarks from `get_salary_data`.
+6. **Track**: Use `list_company_jobs` to monitor posting performance alongside `list_conversations` to manage outreach.
+
+This entire workflow happens in one AI conversation without switching tools.
 
 ### When doing competitive research
 
