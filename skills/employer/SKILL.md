@@ -17,15 +17,31 @@ Ask the user which editor they're using, then give them the exact config:
 
 **Claude Code** (run in terminal):
 ```bash
-claude mcp add himalayas --transport http https://mcp.himalayas.app/mcp
+claude mcp add --transport http himalayas https://mcp.himalayas.app/mcp
 ```
 
-**Cursor / Windsurf / other editors** — add to your MCP config file:
+**Claude Desktop** — go to Settings → Connectors → Add custom connector, and paste:
+```
+https://mcp.himalayas.app/mcp
+```
+
+**Cursor** — add to `~/.cursor/mcp.json` (or `.cursor/mcp.json` in your project):
 ```json
 {
   "mcpServers": {
     "himalayas": {
       "url": "https://mcp.himalayas.app/mcp"
+    }
+  }
+}
+```
+
+**Windsurf** — edit `~/.codeium/windsurf/mcp_config.json`:
+```json
+{
+  "mcpServers": {
+    "himalayas": {
+      "serverUrl": "https://mcp.himalayas.app/mcp"
     }
   }
 }
