@@ -82,6 +82,10 @@ Update your Himalayas profile, add work experience and education, and set your j
 
 ---
 
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/himalayas-app-himalayas-mcp).
+
 ## Setup
 
 ### Claude Desktop
