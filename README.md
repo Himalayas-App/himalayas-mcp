@@ -241,6 +241,22 @@ Authenticated tools use **OAuth 2.1 with PKCE**. When you first use a profile, t
 - [How to Post Jobs Using AI](https://himalayas.app/advice/how-to-post-jobs-using-ai) — Walkthrough of AI-powered job posting methods and best practices
 - [Free Alternative to LinkedIn Recruiter](https://himalayas.app/advice/free-alternative-to-linkedin-recruiter) — How Himalayas talent search compares to LinkedIn Recruiter
 
+## Other ways to access Himalayas job data
+
+The MCP server is the best fit for AI assistants and agents, since it queries live data and exposes tools for jobs, companies, salaries, candidates, and applications. For everything else:
+
+| | MCP server | [JSON API](https://github.com/Himalayas-App/remote-jobs-api) | [RSS feed](https://github.com/Himalayas-App/remote-jobs-rss-feed) |
+| --- | --- | --- | --- |
+| **Interface** | MCP tools | REST + JSON | RSS 2.0 XML |
+| **Coverage** | All jobs, plus companies, salaries, and talent | All jobs, paginated | Latest 100 jobs |
+| **Freshness** | Real time | Every 24 hours | Every 24 hours |
+| **Auth** | None | None | None |
+| **Best for** | AI assistants and agents | Apps, databases, backfilling a job board | Feed readers, monitoring, no-code automations |
+
+- **[Remote Jobs API](https://github.com/Himalayas-App/remote-jobs-api)** — Free public JSON API with browse and search endpoints, an OpenAPI 3.1 spec, and runnable examples in curl, Python, Node.js, TypeScript, PHP, Go, and Ruby.
+- **[Remote Jobs RSS Feed](https://github.com/Himalayas-App/remote-jobs-rss-feed)** — The 100 most recent listings as XML, with parsing examples in five languages and recipes for Slack, Zapier, and n8n.
+- **[Embeddable widget](https://himalayas.app/free-remote-jobs-widget)** — Live remote job listings on any web page with one line of code.
+
 ## Support
 
 For setup questions or integration support, email [hi@himalayas.app](mailto:hi@himalayas.app).
