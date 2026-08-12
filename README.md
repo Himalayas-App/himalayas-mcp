@@ -1,5 +1,7 @@
 # Himalayas Remote Jobs MCP Server
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE) [![MCPAmpel](https://img.shields.io/endpoint?url=https://mcpampel.com/badge/himalayas-app/himalayas-mcp.json)](https://mcpampel.com/repo/himalayas-app/himalayas-mcp)
+
 Search remote jobs, post job listings, find remote candidates, check salary benchmarks, and manage your career — all through AI conversation. The Himalayas MCP server connects your AI assistant to the [Himalayas](https://himalayas.app) remote jobs marketplace in real time.
 
 Works with any AI platform that supports MCP servers, including **Claude Desktop**, **Claude Code**, **Claude Cowork**, **ChatGPT**, **Gemini**, **Cursor**, **Windsurf**, **VS Code**, **Openclaw**, and **Microsoft Copilot Studio**.
