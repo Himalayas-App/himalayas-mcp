@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/himalayas-app-himalayas-mcp-badge.png)](https://mseep.ai/app/himalayas-app-himalayas-mcp)
+
 # Himalayas Remote Jobs MCP Server
 
 Search remote jobs, post job listings, find remote candidates, check salary benchmarks, and manage your career — all through AI conversation. The Himalayas MCP server connects your AI assistant to the [Himalayas](https://himalayas.app) remote jobs marketplace in real time.
