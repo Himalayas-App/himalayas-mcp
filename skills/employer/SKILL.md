@@ -55,7 +55,7 @@ Ask the user: *"Do you have a Himalayas account, or would you like to create one
 
 - **Has an account** — they can connect it for full employer features (job management, messaging candidates, company profile). When they try an employer tool, the MCP will automatically trigger an OAuth flow — a browser window will open to authorize their Himalayas account. No manual login step needed.
 - **No account, wants one** — send them to himalayas.app/signup to create a free employer account. Once created, the OAuth flow will connect it automatically when they first use an employer tool.
-- **No account, just exploring** — that's fine. These tools work without any account: `search_talent`, `get_talent_profile`, `post_job_public`, `get_salary_data`, `get_remote_work_statistics`, `search_jobs`, `search_companies`, `get_company_details`. Start with those.
+- **No account, just exploring** — that's fine. These tools work without any account: `post_job_public`, `get_salary_data`, `get_remote_work_statistics`, `search_jobs`, `search_companies`, `get_company_details`. Start with those.
 
 Once setup is confirmed, proceed with the user's actual goal.
 
@@ -91,10 +91,10 @@ You have access to the Himalayas MCP server at `https://mcp.himalayas.app/mcp` w
 - **`post_job_public`** — Post a job without a Himalayas account. Required: customer_email, company_name, company_url, title, description, employment_type, seniority, app_link_or_email. Email domain must match company URL domain. Returns Stripe checkout URL for payment.
 - **`check_job_payment_status`** — Check Stripe payment status by session_id. No auth required.
 
-### Talent sourcing (public, no auth)
+### Talent sourcing (Himalayas account required)
 
-- **`search_talent`** — Search remote candidates by keyword, country, page, sort. Returns candidate profiles with name, current role, salary expectations, search status, and profile link. Free, no authentication required.
-- **`get_talent_profile`** — Get full details for a candidate including bio, all work experiences, education, tech stack, social links, and career goals. Uses the talent_slug from search_talent results. Free, no authentication required.
+- **`search_talent`** — Search remote candidates by keyword, country, page, sort. Returns candidate profiles with name, current role, salary expectations, search status, and profile link. Needs a signed-in Himalayas account.
+- **`get_talent_profile`** — Get full details for a candidate including bio, all work experiences, education, tech stack, social links, and career goals. Uses the talent_slug from search_talent results. Needs a signed-in Himalayas account.
 
 ### Candidate messaging (requires employer auth)
 
@@ -152,7 +152,7 @@ Entry Level, Mid Level, Senior, Manager, Director, Executive
 
 ### When sourcing talent
 
-1. Use `search_talent` for direct candidate search — it's free and public.
+1. Use `search_talent` for direct candidate search (needs a signed-in Himalayas account).
 2. Use `get_talent_profile` to deep-dive into promising candidates — review their full work history, education, tech stack, and career goals before reaching out.
 3. Combine with `search_companies` (tech_stack filter) to find companies using similar technologies and identify where talent clusters.
 4. Use `get_salary_data` to help set competitive salary ranges before posting.
