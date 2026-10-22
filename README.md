@@ -1,5 +1,7 @@
 # Himalayas Remote Jobs MCP Server
 
+[![Toolweather](https://toolweather.toolweather.workers.dev/badge/app.himalayas/mcp.svg)](https://toolweather.pages.dev/servers/app.himalayas--mcp/)
+
 Remote jobs: job search, salary data and application tracking, or post a job and hire candidates.
 
 **Server URL:** `https://mcp.himalayas.app/mcp` (Streamable HTTP)
