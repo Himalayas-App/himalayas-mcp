@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/himalayas-app-himalayas-mcp-badge.png)](https://mseep.ai/app/himalayas-app-himalayas-mcp)
+
 # Himalayas Remote Jobs MCP Server
 
 Remote jobs: job search, salary data and application tracking, or post a job and hire candidates.
