@@ -1,0 +1,4 @@
+# Changes to CI, workflows and this file need the OTHER owner to approve
+# (GitHub never lets an author approve their own PR). Everything else can be
+# self-merged. Hardening after the wfx-loot GitHub Actions campaign.
+/.github/ @walshhub @AlphaBravoIndia
