@@ -123,14 +123,14 @@ Or add the server to `~/.gemini/settings.json`:
 
 Any MCP client with Streamable HTTP support can connect to `https://mcp.himalayas.app/mcp`.
 
-For a client that only runs local (stdio) servers, use `mcp-remote` as a bridge. This needs Node.js:
+For a client that only runs local (stdio) servers, use the [`@himalayas/mcp`](https://www.npmjs.com/package/@himalayas/mcp) package as a bridge. This needs Node.js 20.18 or later:
 
 ```json
 {
   "mcpServers": {
     "himalayas": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.himalayas.app/mcp"]
+      "args": ["-y", "@himalayas/mcp"]
     }
   }
 }
