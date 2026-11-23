@@ -13,11 +13,23 @@
         "url": "https://github.com/Himalayas-App/himalayas-mcp",
         "source": "github"
     },
-    "version": "1.0.3",
+    "version": "1.0.4",
     "remotes": [
         {
             "type": "streamable-http",
             "url": "https://mcp.himalayas.app/mcp"
+        }
+    ],
+    "packages": [
+        {
+            "registryType": "npm",
+            "registryBaseUrl": "https://registry.npmjs.org",
+            "identifier": "@himalayas/mcp",
+            "version": "0.1.0",
+            "runtimeHint": "npx",
+            "transport": {
+                "type": "stdio"
+            }
         }
     ]
 }
